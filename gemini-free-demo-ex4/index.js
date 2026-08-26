@@ -22,7 +22,7 @@ async function transcribeLocalAudio(filePath) {
       return;
     }
 
-    // Lexo file-ka ku dhex jira folder-kaaga
+  
     const audioBuffer = fs.readFileSync(filePath);
 
     const response = await deepgram.listen.v1.media.transcribeFile(
@@ -45,5 +45,5 @@ async function transcribeLocalAudio(filePath) {
   }
 }
 
-// Adeegso './speech.mp3'
+
 transcribeLocalAudio("./travel.mp3");
