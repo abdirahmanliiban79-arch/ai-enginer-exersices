@@ -4,7 +4,6 @@ import * as fs from "node:fs";
 async function generateSpeech() {
     const text = "Hello Travel is a classroom without walls and a teacher without a book.When we visit a new place, we see how other people live, eat, and laugh.";
 
-    // Wuxuu kuu soo celinayaa Base64 audio string
     const base64Audio = await googleTTS.getAudioBase64(text, {
         lang: "en",
         slow: false,
@@ -12,7 +11,6 @@ async function generateSpeech() {
         timeout: 15000,
     });
 
-    // U beddel Buffer oo ku kaydi local file .mp3
     const buffer = Buffer.from(base64Audio, "base64");
     fs.writeFileSync("travel.mp3", buffer);
 
