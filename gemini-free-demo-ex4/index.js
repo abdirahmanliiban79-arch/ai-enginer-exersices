@@ -45,5 +45,5 @@ async function transcribeLocalAudio(filePath) {
   }
 }
 
-
+// Adeegso './speech.mp3'
 transcribeLocalAudio("./travel.mp3");
