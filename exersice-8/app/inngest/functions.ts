@@ -12,7 +12,7 @@ export const processWelcomeWorkflow = inngest.createFunction(
   async ({ event, step }) => {
 
     await step.run("save-user", async () => {
-      console.log(`💾 [DB]: Saving ${event.data.email} to the database...`);
+      console.log(`Saving ${event.data.email} to the database...`);
     });
 
 
@@ -88,7 +88,7 @@ export const accountDeletionWorkflow = inngest.createFunction(
     } else {
     
       await step.run("cancel-deletion-request", async () => {
-        console.log(`❌ Deletion request expired for ${userId}. Account safe.`);
+        console.log(` Deletion request expired for ${userId}. Account safe.`);
       });
       return { result: "expired" };
     }
